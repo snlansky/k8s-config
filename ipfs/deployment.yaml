@@ -1,0 +1,26 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: kbcs-ipfs
+  name: ipfs
+  labels:
+    app: ipfs
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ipfs
+    spec:
+      containers:
+      - name: ipfs
+        image: ipfs/go-ipfs:latest
+        env:
+        - name: IPFS_PROFILE
+          value: server
+        ports:
+        - containerPort: 4001
+        - containerPort: 8080
+        - containerPort: 5001
+

@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ipfs
+  namespace: kbcs-ipfs
+spec:
+  selector:
+    app: ipfs
+  ports:
+  - name: swarm-tcp
+    port: 4001
+    targetPort: 4001
+  - name: web-gateway
+    port: 8080
+    targetPort: 8080
+  - name: daemon-api
+    port: 5001
+    targetPort: 5001
