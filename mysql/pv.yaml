@@ -12,6 +12,6 @@ spec:
     storage: 10Gi
   storageClassName: nfs
   nfs:
-    path: /mnt/vdb/nfs-data/trustchain
+    path: /mnt/vdb/nfs-data/trustchain/db
     server: 172.20.107.44
 
