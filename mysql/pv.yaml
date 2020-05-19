@@ -1,0 +1,17 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mysql-pv
+  namespace: database
+  labels:
+    name: sharedvolume
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 10Gi
+  storageClassName: nfs
+  nfs:
+    path: /mnt/vdb/nfs-data/trustchain
+    server: 172.20.107.44
+
